@@ -18,3 +18,5 @@
 
 .byebug_history
 .note
+
+/config/secrets.yml
