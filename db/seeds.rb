@@ -1,29 +1,23 @@
 # Create blog posts
 10.times do |i|
-  Blog.create! title: "Blog post #{i}",
-               body:  <<~HERE
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  Porro, minima. Quae at nostrum vel itaque odio accusantium possimus,
-  architecto ipsa esse quibusdam eius!
-  Quia quos modi ratione necessitatibus cupiditate, aspernatur.
-HERE
+  Blog.create! title: Faker::Lorem.sentence,
+               body:  Faker::Lorem.paragraph(10)
 end
+puts "10 blog posts created!"
 
 # Create skills
 5.times do |i|
-  Skill.create! title: "Skill #{i}",
+  Skill.create! title:            Faker::Lorem.word,
                 percent_utilized: 20
 end
+puts "5 skills created!"
 
-# Create portfolios
+# Create portfolio items
 9.times do |i|
-  Portfolio.create! title: "Portfolio #{i}",
-                    subtitle: "My portfolio",
-                    main_image: "https://via.placeholder.com/600x400",
-                    thumb_image: "https://via.placeholder.com/300x200",
-                    body: <<~HERE
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  Sequi repellendus incidunt labore, est aspernatur, debitis necessitatibus.
-  Officiis, inventore.
-HERE
+  Portfolio.create! title:       Faker::Lorem.word,
+                    body:        Faker::Lorem.paragraph(4),
+                    subtitle:    Faker::Lorem.sentence ,
+                    main_image:  "https://via.placeholder.com/600x400",
+                    thumb_image: "https://via.placeholder.com/300x200"
 end
+puts "9 portfolio items created!"
