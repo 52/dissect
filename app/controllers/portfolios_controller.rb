@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :load_portfolio_item, only: [:show, :edit, :update]
+  before_action :load_portfolio_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @portfolio_items = Portfolio.all
@@ -39,6 +39,16 @@ class PortfoliosController < ApplicationController
         end
       else
         format.html{render :edit}
+      end
+    end
+  end
+
+  def destroy
+    @portfolio_item.destroy
+
+    respond_to do |format|
+      format.html do
+        redirect_to portfolios_url, notice: "Portfolio item was removed."
       end
     end
   end
