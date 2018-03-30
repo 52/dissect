@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'contact',  to: 'pages#contact'
 
   resources :portfolios, except: [:show]
+
+  get 'portfolios/:subtitle', to: 'portfolios#list_by_subtitle',
+                              as: 'portfolios_subtitle'
+
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
 
   resources :blogs do

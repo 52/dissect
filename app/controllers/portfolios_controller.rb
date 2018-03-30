@@ -1,8 +1,24 @@
 class PortfoliosController < ApplicationController
+  SUBTITLES = %w(angular ruby_on_rails).freeze
   before_action :load_portfolio_item, only: [:show, :edit, :update, :destroy]
 
   def index
+    @title = "Portfolio Items"
     @portfolio_items = Portfolio.all
+  end
+
+  # GET /portfolios/angular
+  # GET /portfolios/ruby-on-rails
+  # List portfolio items by subtitle
+  def list_by_subtitle
+    subtitle = params[:subtitle].downcase.tr "-", "_"
+    if SUBTITLES.include? subtitle
+      @title = "#{subtitle.titleize} Portfolio Items"
+      @portfolio_items = Portfolio.send subtitle
+      render :index
+    else
+      redirect_to portfolios_url
+    end
   end
 
   def show
