@@ -35,3 +35,9 @@ Portfolio.create! title:       Faker::Lorem.word.capitalize,
                   thumb_image: "https://via.placeholder.com/300x200"
 
 puts "9 portfolio items created!"
+
+3.times do
+  Portfolio.last.technologies.create! name: Faker::Lorem.word.capitalize
+end
+
+puts "3 technologies created for the last portfolio!"
