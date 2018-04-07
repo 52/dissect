@@ -1,0 +1,7 @@
+<hr>
+
+<% if session[:referer] %>
+  <p>Thank you for visiting me from <%= session[:referer] %></p>
+<% end %>
+
+<%= debug(params) if Rails.env.development? %>
