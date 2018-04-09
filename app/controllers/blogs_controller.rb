@@ -1,4 +1,9 @@
 class BlogsController < ApplicationController
+  # Rails sẽ tự tìm layout cùng tên với controller nếu không khai báo cụ thể
+  # BlogsController sẽ tìm layout `blogs.html.erb`
+  # Nếu không thấy sẽ load `application.html.erb`
+  layout "blogs"
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
