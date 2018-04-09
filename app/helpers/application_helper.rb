@@ -17,4 +17,12 @@ module ApplicationHelper
   def seo_keywords keywords = ""
     keywords.empty? ? "Rails 5 sample app" : keywords
   end
+
+  # View helper: Show where users come from
+  def referer_helper
+    if session[:referer]
+      greeting = "Thank you for visiting me from #{session[:referer]}"
+      tag.div greeting, class: "referer-greeting"
+    end
+  end
 end
