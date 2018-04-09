@@ -25,4 +25,8 @@ module ApplicationHelper
       tag.div greeting, class: "referer-greeting"
     end
   end
+
+  def copyright_generator
+    DissectViewHelper::Renderer.copyright "Toan", "All rights reserved"
+  end
 end

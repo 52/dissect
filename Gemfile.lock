@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/52/dissect_view_helper
+  revision: c9bdfd4ff50ae71fe6e6ea3b9943e6ca90c19f5a
+  specs:
+    dissect_view_helper (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,6 +204,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.4, >= 4.4.3)
+  dissect_view_helper!
   faker
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
