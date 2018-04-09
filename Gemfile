@@ -18,6 +18,7 @@ gem 'devise',       '~> 4.4', '>= 4.4.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
   gem 'awesome_print'
   gem 'faker'
 end
