@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def guest_user
-    OpenStruct.new name: "Guest", first_name: "Guest", last_name: "Guest"
+    User.new name: "Guest User", email: "guest@local.com"
   end
 
   # View helper: Return title for a page

@@ -2,6 +2,10 @@ class PortfoliosController < ApplicationController
   SUBTITLES = %w(angular ruby_on_rails).freeze
   before_action :load_portfolio_item, only: [:show, :edit, :update, :destroy]
 
+  access all:        [:index, :show, :list_by_subtitle],
+         user:       {except: [:new, :edit, :create, :update, :destroy]},
+         site_admin: :all
+
   def index
     @title = "Portfolio Items"
     @portfolio_items = Portfolio.all

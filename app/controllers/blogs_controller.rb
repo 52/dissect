@@ -4,6 +4,10 @@ class BlogsController < ApplicationController
   # Nếu không thấy sẽ load `application.html.erb`
   layout "blogs"
 
+  access all:        [:index, :show],
+         user:       {except: [:new, :edit, :create, :update, :destroy]},
+         site_admin: :all
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
