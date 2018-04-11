@@ -1,6 +1,6 @@
 <% provide :title, "Blog" %>
 
-<%= render("blogs/latest_post_jumbotron", post: @blogs.first) if @blogs.any? %>
+<%= render("blogs/latest_post_jumbotron", post: Blog.first) if Blog.any? %>
 
 <main role="main" class="container">
   <div class="row">
@@ -10,6 +10,11 @@
       </h3>
       <div class="blog-post">
         <%= render @blogs %>
+
+        <nav class="blog-pagination">
+          <%= link_to_prev_page @blogs, "Older", class: "btn btn-outline-primary" %>
+          <%= link_to_next_page @blogs, "Newer", class: "btn btn-outline-primary" %>
+        </nav>
       </div>
     </div>
 
