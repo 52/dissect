@@ -14,13 +14,13 @@
   <body class="text-center">
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <%= render "layouts/nav" %>
+      <%= render "layouts/application/nav" %>
 
-      <%= render "layouts/flash_messages" %>
+      <%= render "layouts/shared/flash_messages" %>
 
       <%= yield %>
 
-      <%= render "layouts/footer" %>
+      <%= render "layouts/application/footer" %>
 
     </div>
   </body>

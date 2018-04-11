@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title><%= page_title yield(:title) %></title>
     <meta name="keywords" content="<%= seo_keywords yield(:keywords) %>"/>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,20 +16,14 @@
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Log in", new_user_session_path %>
-    <% end %>
+    <div class="container">
+      <%= render "layouts/blogs/header" %>
+      <%= render "layouts/blogs/nav" %>
+      <%= render "layouts/shared/flash_messages" %>
+    </div>
 
     <%= yield %>
 
-    <%= render "layouts/nav", location: "bottom" %>
-
-    <%= render "layouts/footer" %>
+    <%= render "layouts/blogs/footer" %>
   </body>
 </html>

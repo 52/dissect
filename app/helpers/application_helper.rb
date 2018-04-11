@@ -27,6 +27,6 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    DissectViewHelper::Renderer.copyright "Toan", "All rights reserved"
+    DissectViewHelper::Renderer.copyright "Toan Nguyen", "All rights reserved."
   end
 end

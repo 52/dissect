@@ -1,0 +1,14 @@
+<p class="blog-post-meta">
+  <%= time_ago_in_words blog.created_at %> ago
+
+  <% if logged_in? :site_admin %>
+      |
+      <%= link_to "Change Status (Currently: #{blog.status.capitalize})",
+                  toggle_status_blog_path(blog), method: :post %>
+      |
+      <%= link_to 'Edit', edit_blog_path(blog) %>
+      |
+      <%= link_to "Destroy", blog, method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</p>

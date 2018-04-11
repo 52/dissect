@@ -1,6 +1,11 @@
-<h1>Editing Blog</h1>
+<% provide :title, "Editing blog post" %>
 
-<%= render 'form', blog: @blog %>
+<div class="container">
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+  <h1>Editing blog post</h1>
+
+  <%= render 'form', blog: @blog, button_label: "Update" %>
+
+  <%= link_to 'Show', @blog %> |
+  <%= link_to 'Back', blogs_path %>
+</div>

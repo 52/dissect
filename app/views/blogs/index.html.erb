@@ -1,22 +1,18 @@
-<p id="notice"><%= notice %></p>
+<% provide :title, "Blog" %>
 
-<h1>Blogs</h1>
+<%= render("blogs/latest_post_jumbotron", post: @blogs.first) if @blogs.any? %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Body</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-3 mb-4 font-italic border-bottom">
+        My blog posts
+      </h3>
+      <div class="blog-post">
+        <%= render @blogs %>
+      </div>
+    </div>
 
-  <tbody>
-    <%= render @blogs %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+    <%= render "layouts/blogs/sidebar" %>
+  </div>
+</main>
