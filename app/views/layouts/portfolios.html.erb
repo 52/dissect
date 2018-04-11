@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= page_title yield(:title) %></title>
     <meta name="keywords" content="<%= seo_keywords yield(:keywords) %>"/>
     <%= csrf_meta_tags %>
@@ -10,20 +12,10 @@
   </head>
 
   <body>
-    <%= render "layouts/nav", location: "top" %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Log in", new_user_session_path %>
-    <% end %>
+    <%= render "layouts/portfolios/header" %>
 
     <%= yield %>
 
-    <%= render "layouts/footer" %>
+    <%= render "layouts/portfolios/footer" %>
   </body>
 </html>

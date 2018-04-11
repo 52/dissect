@@ -7,7 +7,6 @@ class PortfoliosController < ApplicationController
          site_admin: :all
 
   def index
-    @title = "Portfolio Items"
     @portfolio_items = Portfolio.all
   end
 

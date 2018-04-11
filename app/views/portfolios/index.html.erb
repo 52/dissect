@@ -1,7 +1,19 @@
-<% provide :title, "Portfolios" %>
-<% provide :keywords, "Portfolios" %>
+<% provide :title, "Portfolio" %>
+<% provide :keywords, "Portfolio" %>
 
-<h1><%= @title %></h1>
-<%= link_to "Create new Portfolio Item", new_portfolio_path if logged_in?(:site_admin) %>
+<%= render "portfolios/jumbotron" %>
 
-<%= render partial: "portfolio_item", collection: @portfolio_items %>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+    <%= render partial: "portfolio_item", collection: @portfolio_items %>
+    </div>
+
+    <% if logged_in? :site_admin %>
+      <%= link_to "Create new Portfolio Item", new_portfolio_path,
+                  type: "button", class: "btn btn-primary"  %>
+    <% end %>
+  </div>
+</div>
+
+
