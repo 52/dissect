@@ -20,19 +20,21 @@ end
 puts "5 skills created!"
 
 # Create portfolio items
-8.times do
+8.times do |i|
   Portfolio.create! title:       Faker::Lorem.word.capitalize,
                     body:        Faker::Lorem.paragraph(4),
                     subtitle:    "Ruby on Rails",
                     main_image:  "https://via.placeholder.com/600x400",
-                    thumb_image: "https://via.placeholder.com/300x200"
+                    thumb_image: "https://via.placeholder.com/300x200",
+                    position:    i + 1
 end
 
 Portfolio.create! title:       Faker::Lorem.word.capitalize,
                   body:        Faker::Lorem.paragraph(4),
                   subtitle:    "Angular",
                   main_image:  "https://via.placeholder.com/600x400",
-                  thumb_image: "https://via.placeholder.com/300x200"
+                  thumb_image: "https://via.placeholder.com/300x200",
+                  position:    9
 
 puts "9 portfolio items created!"
 

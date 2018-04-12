@@ -8,6 +8,7 @@ class Portfolio < ApplicationRecord
 
   scope :angular,       ->{where subtitle: "Angular"}
   scope :ruby_on_rails, ->{where subtitle: "Ruby on Rails"}
+  scope :by_position,   ->{order position: :asc}
 
   after_initialize :set_default_images
 
