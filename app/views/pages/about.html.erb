@@ -2,6 +2,15 @@
 
 <h1>About me</h1>
 <hr>
-<p>
-  <%= Faker::Lorem.paragraph 10 %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag "https://via.placeholder.com/250x250",
+                  width: 250, alt: "profile picture" %>
+  </div>
+
+  <div class="col-md-8">
+  <p>
+    <%= Faker::Lorem.paragraph 10 %>
+  </p>
+  </div>
+</div>

@@ -1,21 +1,13 @@
 class Portfolio < ApplicationRecord
-  include Placeholder
-
   has_many :technologies
   accepts_nested_attributes_for :technologies, reject_if: :all_blank
 
-  validates_presence_of :title, :body, :main_image, :thumb_image
+  validates_presence_of :title, :body
 
   scope :angular,       ->{where subtitle: "Angular"}
   scope :ruby_on_rails, ->{where subtitle: "Ruby on Rails"}
   scope :by_position,   ->{order position: :asc}
 
-  after_initialize :set_default_images
-
-  private
-
-  def set_default_images
-    self.main_image  ||= Placeholder.image_generator width: 600, height: 400
-    self.thumb_image ||= Placeholder.image_generator width: 300, height: 200
-  end
+  mount_uploader :main_image,  PortfolioUploader
+  mount_uploader :thumb_image, PortfolioUploader
 end

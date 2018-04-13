@@ -1,11 +1,12 @@
 <div class="col-md-4 portfolio-item", id="<%= portfolio_item.id %>">
   <div class="card mb-4 box-shadow">
 
-    <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+    <%= image_tag portfolio_item_image(portfolio_item, "thumb") %>
 
     <div class="card-body">
 
-      <%= link_to tag.h3(portfolio_item.title), portfolio_item %>
+      <%= link_to tag.h3(portfolio_item.title),
+                  portfolio_show_path(portfolio_item) %>
 
       <p class="card-text">
         <%= portfolio_item.subtitle %>
