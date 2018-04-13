@@ -73,6 +73,15 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  # PUT /portfolios/sort
+  def sort
+    params[:order].each_with_index do |id, index|
+      Portfolio.find(id).update position: index + 1
+    end
+
+    render nothing: true
+  end
+
   private
 
   def load_portfolio_item

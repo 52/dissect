@@ -1,3 +1,9 @@
+# Create site admin
+User.create! name: "Admin", email: "admin@local.com",
+             password: "123", password_confirmation: "123",
+             roles: "site_admin"
+puts "Site admin created! email: admin@local.com, password: 123"
+
 # Create topics
 3.times do
   Topic.create! title: Faker::Lorem.word.capitalize
