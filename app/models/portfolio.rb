@@ -8,6 +8,5 @@ class Portfolio < ApplicationRecord
   scope :ruby_on_rails, ->{where subtitle: "Ruby on Rails"}
   scope :by_position,   ->{order position: :asc}
 
-  mount_uploader :main_image,  PortfolioUploader
-  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :image, PortfolioUploader
 end

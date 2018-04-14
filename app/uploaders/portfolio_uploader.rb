@@ -1,7 +1,5 @@
 class PortfolioUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -16,5 +14,11 @@ class PortfolioUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_whitelist
     %w(jpg jpeg gif png)
+  end
+
+  process resize_to_fit: [600, 400]
+
+  version :thumb do
+    process resize_to_fill: [300, 200]
   end
 end
