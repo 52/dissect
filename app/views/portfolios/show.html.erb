@@ -21,6 +21,11 @@
           <% end %>
         </ul>
       <% end %>
+
+      <% if logged_in? :site_admin %>
+        <%= link_to "Edit", edit_portfolio_path(@portfolio_item), type: "button", class: "btn btn-secondary" %>
+      <% end %>
     </div>
+
   </div>
 </div>

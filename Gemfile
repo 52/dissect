@@ -23,6 +23,7 @@ gem 'kaminari',           '~> 1.1', '>= 1.1.1'
 gem 'carrierwave',        '~> 1.2', '>= 1.2.2'
 gem 'mini_magick',        '~> 4.8'
 gem 'dotenv-rails',       '~> 2.2', '>= 2.2.2'
+gem 'cocoon',             '~> 1.2', '>= 1.2.11'
 
 gem 'dissect_view_helper', git: 'https://github.com/52/dissect_view_helper'
 

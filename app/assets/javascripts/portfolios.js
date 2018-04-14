@@ -3,6 +3,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require html5sortable
+//= require cocoon
 //= require turbolinks
 
 // Using html5sortable library
