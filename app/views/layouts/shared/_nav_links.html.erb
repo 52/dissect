@@ -3,6 +3,7 @@
 <%= link_to "Contact",   contact_path,    class: css_class %>
 <%= link_to "Blog",      blogs_path,      class: css_class %>
 <%= link_to "Portfolio", portfolios_path, class: css_class %>
+<%= link_to "Tech News", tech_news_path,  class: css_class %>
 
 <% if user_signed_in? %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete,
