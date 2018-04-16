@@ -1,0 +1,12 @@
+<% provide :title, "Tech news" %>
+
+<h1>Rails latest tweets</h1>
+<hr>
+<div class="row">
+  <% @tweets.each do |tweet| %>
+    <div class="col-md-6 text-left mb-4">
+      <%= tweet %>
+    </div>
+    <br>
+  <% end %>
+</div>

@@ -5,8 +5,9 @@ Rails.application.routes.draw do
                                             sign_out: 'logout',
                                             sign_up:  'register'}
 
-  get 'about-me', to: 'pages#about'
-  get 'contact',  to: 'pages#contact'
+  get 'about-me',  to: 'pages#about'
+  get 'contact',   to: 'pages#contact'
+  get 'tech-news', to: 'pages#tech_news'
 
   resources :portfolios, except: [:show] do
     patch :sort, on: :collection

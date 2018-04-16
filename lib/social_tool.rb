@@ -1,6 +1,5 @@
 module SocialTool
   class << self
-
     # Get the latest tweets with #rubyonrails
     def twitter_search
       client = twitter_connect
