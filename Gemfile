@@ -25,6 +25,7 @@ gem 'mini_magick',        '~> 4.8'
 gem 'dotenv-rails',       '~> 2.2', '>= 2.2.2'
 gem 'cocoon',             '~> 1.2', '>= 1.2.11'
 gem 'twitter',            '~> 6.2'
+gem 'redis',              '~> 4.0', '>= 4.0.1'
 
 gem 'dissect_view_helper', git: 'https://github.com/52/dissect_view_helper'
 
