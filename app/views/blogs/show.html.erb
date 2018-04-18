@@ -19,4 +19,10 @@
 
     <%= render "layouts/blogs/sidebar" %>
   </div>
+
+  <div class="comments">
+    <%= render "blogs/comment_form" %>
+    <%= render @blog.comments %>
+  </div>
+
 </main>

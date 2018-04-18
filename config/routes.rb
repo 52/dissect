@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   root 'pages#home'
 
   devise_for :users, path: '', path_names: {sign_in:  'login',
@@ -23,5 +22,7 @@ Rails.application.routes.draw do
     member do
       post 'toggle_status', to: 'blogs#toggle_status'
     end
+
+    resources :comments
   end
 end

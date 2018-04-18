@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
          user:       {except: [:new, :edit, :create, :update, :destroy, :toggle_status]},
          site_admin: :all
 
-  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -19,6 +19,8 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find params[:id]
+    @comment = Comment.new
   end
 
   # GET /blogs/new
