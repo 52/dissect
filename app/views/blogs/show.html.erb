@@ -20,8 +20,8 @@
     <%= render "layouts/blogs/sidebar" %>
   </div>
 
-  <div class="comments">
-    <%= render "blogs/comment_form" %>
+  <%= render "blogs/comment_form" %>
+  <div id="comments" data-blog-id="<%= @blog.id %>">
     <%= render @blog.comments %>
   </div>
 

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     member do
       post 'toggle_status', to: 'blogs#toggle_status'
     end
-
-    resources :comments
   end
+
+  mount ActionCable.server => '/cable'
 end
