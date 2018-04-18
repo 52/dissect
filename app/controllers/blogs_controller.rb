@@ -25,6 +25,11 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.includes(:comments).friendly.find params[:id]
     @comment = Comment.new
+
+    unless @blog.published? || logged_in?(:site_admin)
+      flash[:danger] = "You're not authorize to access this page."
+      redirect_to blogs_url
+    end
   end
 
   # GET /blogs/new
