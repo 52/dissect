@@ -10,6 +10,9 @@
           <%= @blog.title %>
         </h2>
 
+        <p>
+          <%= @blog.topic.title %>
+        </p>
         <%= render "blogs/blog_post_meta", blog: @blog %>
 
         <%= @blog.body %>
