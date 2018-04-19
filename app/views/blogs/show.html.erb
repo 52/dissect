@@ -6,13 +6,12 @@
 
       <div class="blog-post">
 
+        <%= render "blogs/breadcrumb" %>
+
         <h2 class="blog-post-title">
           <%= @blog.title %>
         </h2>
 
-        <p>
-          <%= @blog.topic.title %>
-        </p>
         <%= render "blogs/blog_post_meta", blog: @blog %>
 
         <%= markdown @blog.body %>

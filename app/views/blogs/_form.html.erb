@@ -24,6 +24,7 @@
 
   <div class="form-group">
     <%= form.label :body %>
+    <small class="text-muted">Using Markdown syntax</small>
     <%= form.text_area :body, id: :blog_body, rows: "10", class: "form-control" %>
     <%= render "shared/form_field_error_message", object: blog, field: :body %>
 
