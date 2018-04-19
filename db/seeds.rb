@@ -14,7 +14,8 @@ puts "3 topics created"
 10.times do
   Blog.create! title:    Faker::Lorem.sentence,
                body:     Faker::Lorem.paragraph(10),
-               topic_id: Topic.last.id
+               topic_id: Topic.last.id,
+               status:   1
 end
 puts "10 blog posts created!"
 

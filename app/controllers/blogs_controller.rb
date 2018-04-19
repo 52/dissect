@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  include SidebarTopics
   # Rails sẽ tự tìm layout cùng tên với controller nếu không khai báo cụ thể
   # BlogsController sẽ tìm layout `blogs.html.erb`
   # Nếu không thấy sẽ load `application.html.erb`
@@ -9,6 +10,7 @@ class BlogsController < ApplicationController
          site_admin: :all
 
   before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :load_sidebar_topics, only: [:index, :show]
 
   # GET /blogs
   # GET /blogs.json

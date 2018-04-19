@@ -1,12 +1,10 @@
-<% provide :title, "Blog" %>
-
-<%= render("blogs/latest_post_jumbotron", post: Blog.published.first) if Blog.published.any? %>
+<% provide :title, @topic.title %>
 
 <main role="main" class="container">
   <div class="row">
     <div class="col-md-8 blog-main">
       <h3 class="pb-3 mb-4 font-italic border-bottom">
-        My blog posts
+        <%= @topic.title %>
       </h3>
       <div class="blog-post">
         <%= render @blogs %>
