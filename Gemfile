@@ -29,6 +29,7 @@ gem 'twitter',            '~> 6.2'
 gem 'redis',              '~> 4.0', '>= 4.0.1'
 gem 'redcarpet',          '~> 3.4'
 gem 'coderay',            '~> 1.1', '>= 1.1.2'
+gem 'faker'
 
 gem 'dissect_view_helper', git: 'https://github.com/52/dissect_view_helper'
 
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'awesome_print'
-  gem 'faker'
 end
 
 group :development do
