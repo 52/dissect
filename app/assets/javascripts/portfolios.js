@@ -11,7 +11,7 @@
 document.addEventListener("turbolinks:load", function(){
   sortable(".sortable")[0].addEventListener("sortupdate", function(){
 
-    let order = [];
+    var order = [];
 
     $(".sortable .portfolio-item").each(function(){
       order.push(this.id);
