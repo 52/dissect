@@ -6,11 +6,66 @@
   <div class="col-md-4">
     <%= image_tag "https://via.placeholder.com/250x250",
                   width: 250, alt: "profile picture" %>
+
+    <div class="skills">
+      <% @skills.each do |skill| %>
+        <div class="skill">
+          <h4><%= skill.title %></h4>
+          <div class="progress">
+            <div class="progress-bar bg-danger progress-bar-striped" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"
+                 aria-valuenow="<%= skill.percent_utilized %>"
+                 style="width: <%= skill.percent_utilized %>%">
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+
 
   <div class="col-md-8">
   <p>
     <%= Faker::Lorem.paragraph 10 %>
   </p>
+
+  <p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse"
+            data-target="#job-history" aria-expanded="false"
+            aria-controls="job-history">
+      Job History
+    </button>
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse"
+            data-target="#education" aria-expanded="false"
+            aria-controls="education">
+      Education
+    </button>
+  </p>
+
+  <div class="collapse" id="job-history">
+    <div class="card card-body">
+      Job 1
+    </div>
+    <div class="card card-body">
+      Job 2
+    </div>
+    <div class="card card-body">
+      Job 3
+    </div>
+  </div>
+
+  <div class="collapse" id="education">
+    <div class="card card-body">
+      Education 1
+    </div>
+    <div class="card card-body">
+      Education 2
+    </div>
+    <div class="card card-body">
+      Education 3
+    </div>
+  </div>
+
   </div>
 </div>

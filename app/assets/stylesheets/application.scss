@@ -116,6 +116,10 @@ body {
  * Custom styles
  */
 
+.card {
+  margin-bottom: 1em;
+}
+
 .card-body {
   color: black;
   text-align: left;
@@ -129,4 +133,9 @@ body {
 .login {
   width: 30rem;
   margin: 0 auto;
+}
+
+.skills {
+  margin: 1em 0;
+  text-align: left;
 }
