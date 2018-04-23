@@ -51,5 +51,8 @@ TWITTER_ACCESS_SECRET=enter_your_hey_here
 bin\rails s
 ```
 
+## Built with
+- Rails version 5.1.5
+- Ruby version 2.4.3
 _______
 [Course's author repo](https://github.com/jordanhudgens/devcamp-portfolio)
